@@ -1,0 +1,633 @@
+/* CSS Document */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* kleuren */
+:root {
+  --navigatie-kleur: #222322;
+  --zwart: black;
+  --wit: white;
+  --grijs: grey;
+  --hamburger-list-items: rgb(226, 226, 226);
+  --roze: #ee90b4;
+  --groen: rgb(2, 131, 2);
+  --footer: #d5d6d5;
+}
+
+/* fonts */
+
+@font-face {
+  font-family: "jost";
+  src: url("../font/Jost-Light.ttf");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "jost";
+  src: url("../font/Jost-Regular.ttf");
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: "jost";
+  src: url("../font/Jost-Medium.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "jost";
+  src: url("../font/Jost-SemiBold.ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "jost";
+  src: url("../font/Jost-Bold.ttf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "jost";
+  src: url("../font/Jost-ExtraBoldItalic.ttf");
+  font-weight: 600;
+  font-style: italic;
+}
+
+
+body {
+  font-family: "jost", Helvetica, sans-serif;
+  background-color: var(--wit);
+}
+
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:focus img {
+  border: 2px dotted var(--roze);
+}
+
+a:focus p {
+  border: 2px dotted var(--roze);
+}
+
+
+
+/* navigatie bar */
+header nav ul:first-of-type {
+  background-color: var(--navigatie-kleur);
+  position: fixed;
+  width: 100%;
+  height: 3em;
+  z-index: 100;
+}
+
+header nav ul:first-of-type li {
+  position: absolute;
+  height: 3.5em;
+
+}
+
+/* positioneren van de list items & groter/kleiner maken van de afbeeldingen */
+header nav ul:first-of-type li:nth-of-type(1) {
+  left: 0.5em;
+  top: 0.5em;
+}
+
+header nav ul:first-of-type li:nth-of-type(1) img {
+  width: 2em;
+}
+
+header nav ul:first-of-type li:nth-of-type(2) {
+  left: 2.5em;
+  top: 0.8em;
+}
+
+header nav ul:first-of-type li:nth-of-type(2) img {
+  width: 8em;
+}
+
+header nav ul:first-of-type li:nth-of-type(3) {
+  left: 60%;
+  top: 0.3em;
+}
+
+header nav ul:first-of-type li:nth-of-type(4) {
+  left: 70%;
+  top: 0.6em;
+}
+
+header nav ul:first-of-type li:nth-of-type(5) {
+  left: 80%;
+  top: 0.4em;
+}
+
+header nav ul:first-of-type li:nth-of-type(6) {
+  left: 90%;
+  top: 0.3em;
+}
+
+header nav ul:first-of-type li:nth-of-type(3) img,
+header nav ul:first-of-type li:nth-of-type(4) img,
+header nav ul:first-of-type li:nth-of-type(5) img,
+header nav ul:first-of-type li:nth-of-type(6) img {
+  width: 2.5em;
+}
+
+/* hamburger menu */
+
+header nav ul:nth-of-type(2) {
+  z-index: 100;
+  position: fixed;
+  height: 50em;
+  width: 18em;
+  background-color: var(--wit);
+  margin-left: -25em;
+  transition: 1s;
+}
+
+header nav ul:nth-of-type(2).hamburgermenu {
+  margin-left: 0;
+}
+
+header nav ul:nth-of-type(2) li:first-of-type,
+header nav ul:nth-of-type(2) li:nth-of-type(2) {
+  background-color: var(--wit);
+  padding: 0;
+  position: absolute;
+  top: 1em;
+}
+
+header nav ul:nth-of-type(2) li:first-of-type {
+  left: 2em;
+  text-decoration: underline;
+}
+
+header nav ul:nth-of-type(2) li:nth-of-type(2) {
+  right: 2em;
+  opacity: 50%;
+}
+
+header nav ul:nth-of-type(2) li:nth-of-type(2):hover {
+  text-decoration: underline;
+}
+
+
+header nav ul:nth-of-type(2) li:nth-of-type(3) {
+  margin-top: 5em;
+}
+
+header nav ul:nth-of-type(2) li {
+  padding: 2em;
+  background-color: var(--hamburger-list-items);
+  margin: .8em;
+}
+
+header nav ul:nth-of-type(2) li:last-of-type {
+  padding: 0;
+}
+
+header nav ul:nth-of-type(2) li button {
+  padding: .6em;
+  position: absolute;
+  top: 0;
+  right: -1.6em;
+  background-color: var(--wit);
+  font-size: 2em;
+  border: none;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  height: 3em;
+  background-color: var(--footer);
+}
+
+footer p:nth-of-type(1) {
+  position: absolute;
+  left: 5%;
+  font-weight: 100;
+  font-size: 0.7em;
+  top: 1em;
+  color: var(--zwart);
+}
+
+footer p:nth-of-type(2) {
+  position: absolute;
+  right: 5%;
+  font-weight: 100;
+  font-size: 0.7em;
+  top: 1em;
+  color: var(--zwart);
+}
+
+
+
+/* main content */
+main.homepage {
+  display: flex;
+  flex-direction: column;
+}
+
+/* black friday advertentie */
+.homepage main>section:first-of-type img {
+  margin-top: 3.3em;
+  width: 100%;
+}
+
+/* 4 categorieën */
+.homepage main>section:nth-of-type(2) {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.homepage section:nth-of-type(2) section {
+  padding: 1em;
+  width: 50%;
+}
+
+.homepage section:nth-of-type(2) section img {
+  width: 100%;
+  transition: 0.5s;
+}
+
+.homepage section:nth-of-type(2) section img:hover {
+  opacity: 80%;
+}
+
+.homepage section:nth-of-type(2) section h2 {
+  text-align: center;
+  padding: 0.5em;
+  font-size: 0.9em;
+  color: var(--zwart);
+}
+
+.homepage section:nth-of-type(2) section p {
+  font-size: 1em;
+  text-align: center;
+  font-weight: 200;
+  color: var(--zwart);
+}
+
+/* topshop en overwin de kou */
+
+.homepage main>section:nth-of-type(3) img,
+.homepage main>section:nth-of-type(4) img {
+  width: 100%;
+  padding: 1em;
+}
+
+.homepage main>section:nth-of-type(3) h3,
+.homepage main>section:nth-of-type(3) p,
+.homepage main>section:nth-of-type(4) h3,
+.homepage main>section:nth-of-type(4) p {
+  text-align: center;
+  color: var(--zwart);
+}
+
+.homepage main>section:nth-of-type(3) h3,
+.homepage main>section:nth-of-type(4) h3 {
+  font-size: 1.4em;
+  font-weight: 500;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.homepage main>section:nth-of-type(3)>p,
+.homepage main>section:nth-of-type(4)>p {
+  font-size: 1em;
+  font-weight: 200;
+  padding-bottom: 1em;
+}
+
+
+/* knoppen */
+.homepage main>section:nth-of-type(3) a,
+.homepage main>section:nth-of-type(4) a {
+  font-weight: 400;
+  color: var(--zwart);
+}
+
+.homepage main>section:nth-of-type(3) a:hover p,
+.homepage main>section:nth-of-type(4) a:hover p {
+  color: var(--wit);
+  background-color: var(--zwart);
+}
+
+.homepage main>section:nth-of-type(3) a p,
+.homepage main>section:nth-of-type(4) a p {
+  border: 2px solid var(--zwart);
+  width: 35%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-left: 35%;
+  margin-bottom: 1em;
+  transition: 0.5s;
+}
+
+/* black friday: de beste items */
+
+.homepage main>section:nth-of-type(5) {
+  position: relative;
+  background-color: var(--roze);
+  height: 13em;
+}
+
+.homepage main>section:nth-of-type(5) h4 {
+  position: absolute;
+  text-align: center;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.5em;
+  max-width: 70%;
+  left: 15%;
+  top: 10%;
+  color: var(--zwart);
+}
+
+
+/* shop de edit knop */
+.homepage main>section:nth-of-type(5) a p {
+  position: absolute;
+  text-decoration: none;
+  color: var(--wit);
+  background-color: var(--zwart);
+  width: 38%;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  text-align: center;
+  bottom: 15%;
+  left: 32%;
+  transition: 0.5s;
+}
+
+.homepage main>section:nth-of-type(5) a:hover p {
+  opacity: 50%;
+  border-radius: 50px;
+}
+
+/* merk namen */
+
+.homepage main>section:nth-of-type(6) {
+  position: relative;
+  height: 45em;
+}
+
+
+/* merken die trending zijn */
+.homepage main>section:nth-of-type(6) h5 {
+  position: absolute;
+  margin: 1em;
+  font-size: 1.2em;
+  left: 13%;
+  color: var(--zwart);
+}
+
+/* brand namen foto's */
+.homepage main>section:nth-of-type(6) img {
+  position: absolute;
+
+}
+
+.homepage main>section:nth-of-type(6) a:nth-of-type(1) img {
+  width: 40%;
+  margin-top: 10em;
+  left: 5%;
+}
+
+.homepage main>section:nth-of-type(6) a:nth-of-type(2) img {
+  width: 40%;
+  right: 5%;
+  margin-top: 10em;
+}
+
+.homepage main>section:nth-of-type(6) a:nth-of-type(3) img {
+  width: 40%;
+  margin-top: 22.6em;
+  left: 5%;
+}
+
+.homepage main>section:nth-of-type(6) a:nth-of-type(4) img {
+  width: 40%;
+  right: 5%;
+  margin-top: 20em;
+}
+
+.homepage main>section:nth-of-type(6) a:nth-of-type(5) img {
+  width: 40%;
+  margin-top: 34em;
+  left: 5%;
+}
+
+.homepage main>section:nth-of-type(6) a:nth-of-type(6) img {
+  width: 40%;
+  right: 5%;
+  margin-top: 33em;
+}
+
+
+
+
+/* detail pagina */
+.detailpagina {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailpagina h1 {
+  margin-top: 1em;
+  font-weight: 300;
+  color: var(--zwart);
+}
+
+.detailpagina>img {
+  margin-top: 3em;
+  width: 100%;
+}
+
+.detailpagina>section:first-of-type {
+  margin-left: 1em;
+  margin-right: 1em;
+  position: relative;
+  height: 20em;
+}
+
+.detailpagina>section:first-of-type p {
+  font-weight: 200;
+  color: var(--zwart);
+}
+
+/* maat */
+.detailpagina>section:first-of-type label {
+  position: absolute;
+  top: 10em;
+  color: var(--zwart);
+}
+
+/* maat selecteren */
+.detailpagina>section:first-of-type select {
+  position: absolute;
+  width: 100%;
+  height: 3em;
+  top: 14em;
+}
+
+/* algemene button styling */
+.detailpagina>section:first-of-type button {
+  position: absolute;
+  top: 18em;
+}
+
+/* de groene 'in winkelmand' button */
+.detailpagina>section:first-of-type button:first-of-type {
+  background-color: var(--groen);
+  color: var(--wit);
+  width: 80%;
+  left: 0;
+  border: none;
+  height: 3em;
+  font-weight: 600;
+  margin-top: 1em;
+}
+
+/* hartjes knopje */
+.detailpagina>section:first-of-type button:last-of-type {
+  width: 5em;
+  right: 0;
+  margin: 0.2em;
+  border-radius: 2.5em;
+  border: none;
+  background-color: var(--grijs);
+}
+.detailpagina>section:first-of-type button img{
+  width: 100%;
+}
+
+
+
+/* margin links en rechts voor de secties */
+.detailpagina>section:nth-of-type(2),
+.detailpagina>section:nth-of-type(3),
+.detailpagina>section:nth-of-type(4) {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+/* sectie met tekst over de details van het jurkje */
+
+.detailpagina>section:nth-of-type(2) h2 {
+  font-size: 1.2em;
+  margin-bottom: 0.2em;
+  margin-top: 0.6em;
+  color: var(--zwart);
+}
+
+.detailpagina>section:nth-of-type(2) p {
+  font-size: 1em;
+  font-weight: 200;
+  color: var(--zwart);
+}
+
+.detailpagina>section:nth-of-type(2) ul li {
+  list-style-type: disc;
+  margin-left: 1.2em;
+  font-weight: 200;
+  color: var(--zwart);
+}
+
+.detailpagina>section:nth-of-type(3),
+.detailpagina>section:nth-of-type(4){
+  display: flex;
+  height: 22em;
+  overflow: scroll;
+  gap: 1em;
+}
+
+.detailpagina>h3{
+  margin-left: 1em;
+  margin-top: 3em;
+  color: var(--zwart);
+}
+
+.detailpagina>section:nth-of-type(3) img,
+.detailpagina>section:nth-of-type(4) img{
+  height: 15em;
+}
+
+.detailpagina>section:nth-of-type(3) p,
+.detailpagina>section:nth-of-type(4) p{
+  color: var(--zwart);
+  color: var(--zwart);
+}
+
+.detailpagina>section:nth-of-type(3) p:last-of-type,
+.detailpagina>section:nth-of-type(4) p:last-of-type{
+  font-weight: 200;
+  color: var(--zwart);
+}
+
+
+/* animatie in winkelmandje doen */
+@keyframes winkelwagentje {
+  0% { transform:scale(1); }
+  50% { transform:scale(1.5); }
+  100% { transform:scale(1); }
+}
+
+span{
+  position: absolute;
+  background-color: var(--roze);
+  border-radius: 1em;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  font-size: 0.7em;
+}
+
+header nav ul:first-of-type li:nth-of-type(6).inwinkelwagen{
+  animation: winkelwagentje 1s;
+}
+
+header nav ul:first-of-type li:nth-of-type(6).inwinkelwagen span:last-of-type{
+  visibility: hidden;
+}
+
+
+
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --navigatie-kleur: #000000;
+    --zwart: rgb(224, 224, 224);
+    --wit: rgb(43, 43, 56);
+    --hamburger-list-items: rgb(226, 226, 226);
+    --roze: #ee90b4;
+    --footer: #15161b;
+  }
+}
+
+@media (prefers-reduced-motion) {
+
+  .homepage main>section:nth-of-type(5) a p,
+  .homepage main>section:nth-of-type(3) a p,
+  .homepage main>section:nth-of-type(4) a p,
+  .homepage section:nth-of-type(2) section img,
+  header nav ul:nth-of-type(2) {
+    transition: none;
+  }
+
+  header nav ul:first-of-type li:nth-of-type(6).inwinkelwagen{
+    animation: none;
+  }
+}
